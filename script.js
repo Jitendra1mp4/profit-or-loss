@@ -16,12 +16,12 @@ const calculate = (initialPrice, currentPrice, quantity) => {
     // work for profit
     const profitAmount = quantity * difference;
     const profitPercentage = percentage(profitAmount, totalInvested);
-    message = `profit amount : ${profitAmount} profit percentage : ${profitPercentage}`;
+    message = `profit amount : ${profitAmount.toFixed(2)} profit percentage : ${profitPercentage.toFixed(2)}`;
   } else {
     // work for loss
     const lossAmount = quantity * difference * -1;
     const lossPercentage = percentage(lossAmount, totalInvested);
-    message = `loss amount : ${lossAmount} loss percentage : ${lossPercentage}`;
+    message = `loss amount : ${lossAmount.toFixed(2)} loss percentage : ${lossPercentage.toFixed(2)}`;
   }
   setMessage(message);
 };
