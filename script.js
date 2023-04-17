@@ -10,18 +10,22 @@ const calculate = (initialPrice, currentPrice, quantity) => {
   const totalInvested = initialPrice * quantity;
   const difference = currentPrice - initialPrice;
   let message = "";
+  const body =  document.getElementsByTagName('body')[0] ;
   if (difference === 0) {
     message = "No profit No Loss, You just need to care about taxes 🤔️";
+body.style.backgroundColor = "#fff" ;
   } else if (difference > 0) {
     // work for profit
     const profitAmount = quantity * difference;
     const profitPercentage = percentage(profitAmount, totalInvested);
     message = `profit amount : ${profitAmount.toFixed(2)} profit percentage : ${profitPercentage.toFixed(2)}`;
+    body.style.backgroundColor = "#CAFFCE" ;
   } else {
     // work for loss
     const lossAmount = quantity * difference * -1;
     const lossPercentage = percentage(lossAmount, totalInvested);
     message = `loss amount : ${lossAmount.toFixed(2)} loss percentage : ${lossPercentage.toFixed(2)}`;
+    body.style.backgroundColor = "#FFD7DA" ;
   }
   setMessage(message);
 };
